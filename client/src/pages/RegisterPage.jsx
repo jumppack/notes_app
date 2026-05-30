@@ -64,8 +64,16 @@ const RegisterPage = () => {
 
           <button 
             type="submit"
-            disabled={!email || !password || !username || password.length < 6}
-            style={{ width: '100%', padding: '0.75rem', backgroundColor: '#2563eb', color: '#ffffff', border: 'none', borderRadius: '6px', fontWeight: '600', cursor: 'pointer' }}
+            style={{ 
+              width: '100%', 
+              padding: '0.75rem', 
+              backgroundColor: (!email || !password || !username) ? '#93c5fd' : '#2563eb', 
+              color: '#ffffff', 
+              border: 'none', 
+              borderRadius: '6px', 
+              fontWeight: '600', 
+              cursor: (!email || !password || !username ) ? 'not-allowed' : 'pointer' 
+            }}
           >
             Register
           </button>
